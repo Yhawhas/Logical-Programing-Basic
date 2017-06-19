@@ -21,7 +21,7 @@ public class InsertAlphabetsAtSpace {
 		String strSeq = "a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f ";
 		InsertAlphabetsAtSpace obj = new InsertAlphabetsAtSpace();
 		String str = obj.alphabetAtSpace(strSeq);
-		System.out.println("Old String: "+strSeq);
+		System.out.println("Old String: " + strSeq);
 		System.out.println("New String: " + str);
 	}
 }
