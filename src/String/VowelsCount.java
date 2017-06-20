@@ -1,4 +1,4 @@
-package String;
+package string;
 
 public class VowelsCount {
 	public boolean isVowel(char c) {
