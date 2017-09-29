@@ -1,9 +1,8 @@
 package array;
 
-public class ArrayCommonElements {
+public class IntersectionArray {
 	int cIndex;
-
-	public int[] commonElements(int[] a, int[] b) {
+	public int[] intersectArray(int[] a, int[] b) {
 		int[] c;
 		cIndex = 0;
 		if (a.length < b.length) {
@@ -14,7 +13,18 @@ public class ArrayCommonElements {
 		for (int i = 0; i < a.length; i++) {
 			for (int j = 0; j < b.length; j++) {
 				if (a[i] == b[j]) {
-					c[cIndex++] = a[i];
+					boolean flag = false;
+					for (int k = 0; k < c.length; k++) {
+						if (a[i] == c[k]) {
+							flag = true;
+							break;
+						}
+					}
+					if (!flag) {
+						c[cIndex++] = a[i];
+					} else {
+						continue;
+					}
 				}
 			}
 		}
@@ -57,13 +67,13 @@ public class ArrayCommonElements {
 
 	public static void main(String args[]) {
 		int[] a = { 5, 1, 6, 3, 0, 2, 4 };
-		int[] b = { 6, 5, 7, 9, 2, 1, 4 };
-		ArrayCommonElements obj = new ArrayCommonElements();
-		int[] arr = obj.commonElements(a, b);
+		int[] b = { 6, 5, 7, 1, 2, 1, 6 };
+		IntersectionArray obj = new IntersectionArray();
+		int[] arr = obj.intersectArray(a, b);
 		int[] sortArr = obj.sortArray(arr);
 		System.out.println("Array A: " + obj.printArray(a, a.length));
 		System.out.println("Array B: " + obj.printArray(b, b.length));
-		System.out.println("Common Elements in Array A&B: " + obj.printArray(sortArr, obj.cIndex));
+		System.out.println("Intersection Array A&B: " + obj.printArray(sortArr, obj.cIndex));
 	}
 
 }

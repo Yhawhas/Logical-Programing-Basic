@@ -27,7 +27,7 @@ public class SortArray {
 
 	public static void main(String args[]) {
 		int[] a = { 5, 2, 0, 9, 3 };
-		int[] b = { 8, 4, 1, 7, 6 };
+		int[] b = { 8, 4, 1, 7, 6, 6 };
 		SortArray obj = new SortArray();
 		int[] arr = obj.sortArray(a, b);
 		System.out.println("Array 1: " + Arrays.toString(a));
